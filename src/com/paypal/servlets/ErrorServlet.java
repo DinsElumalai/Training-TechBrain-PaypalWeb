@@ -1,27 +1,23 @@
 package com.paypal.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class HomeServlet
+ * Servlet implementation class ErrorServlet
  */
-//@WebServlet("/HomeServlet")
-public class HomeServlet extends HttpServlet {
+//@WebServlet("/ErrorServlet")
+public class ErrorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HomeServlet() {
+    public ErrorServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,27 +29,7 @@ public class HomeServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		String appName = getServletContext().getInitParameter("appName");
-		String pageName = getServletConfig().getInitParameter("pageName");
-		
-		HttpSession session = request.getSession();
-		
-		Cookie cookies[] = request.getCookies();
-		
-		if(session.getAttribute("username") != null)
-		{
-			response.setContentType("text/html");
-			
-			String username = request.getParameter("user");
-			String pswd = request.getParameter("pswd");
-			
-			PrintWriter out = response.getWriter();
-			out.write("Entered values are " + username + " " + pswd);
-			out.write(cookies[0].getValue());
-		}
-		else
-			response.sendRedirect("index.html");
-		
+		response.sendRedirect("views/errorPage.html");
 	}
 
 	/**

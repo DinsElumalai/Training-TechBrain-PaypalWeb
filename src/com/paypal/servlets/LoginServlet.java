@@ -35,6 +35,9 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		String appName = getServletContext().getInitParameter("appName");
+		String pageName = getServletConfig().getInitParameter("pageName");
+		
 		response.setContentType("text/html");
 		
 		String username = request.getParameter("user");
@@ -65,7 +68,9 @@ public class LoginServlet extends HttpServlet {
 		}
 		else
 		{
+			out.write(appName + " <br>");
 			out.write("Login Failed");
+			out.write(pageName);
 			failure.include(request, response);
 		}
 		
