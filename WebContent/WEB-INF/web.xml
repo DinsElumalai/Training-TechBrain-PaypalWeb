@@ -10,7 +10,7 @@
   	<param-value>PayPal Web</param-value>
   </context-param>
   
-  <servlet>
+<!--   <servlet>
   	<servlet-name>login</servlet-name>
   	<servlet-class>com.paypal.servlets.LoginServlet</servlet-class>
   	<init-param>
@@ -22,6 +22,9 @@
   	<servlet-name>login</servlet-name>
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
+ 
+  --> 
+  
   <servlet>
   	<servlet-name>home</servlet-name>
   	<servlet-class>com.paypal.servlets.HomeServlet</servlet-class>
@@ -35,6 +38,15 @@
   	<url-pattern>/home</url-pattern>
   </servlet-mapping>
   
+ <!--  <filter>
+  	<filter-name>homeFilter</filter-name>
+  	<filter-class>com.paypal.filters.HomeFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>homeFilter</filter-name>
+  	<url-pattern>/home</url-pattern>
+  </filter-mapping>
+   -->
   <servlet>
   	<servlet-name>error</servlet-name>
   	<servlet-class>com.paypal.servlets.ErrorServlet</servlet-class>
@@ -48,5 +60,9 @@
   	<error-code>404</error-code>
   	<location>/views/errorPage.html</location>
   </error-page>
+ <!--  <error-page>
+  	<error-code>500</error-code>
+  	<location>/views/errorPage.html</location>
+  </error-page> -->
   
 </web-app>

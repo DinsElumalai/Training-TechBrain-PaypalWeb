@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,8 @@ import com.paypal.controller.LoginController;
 /**
  * Servlet implementation class LoginServlet
  */
-//@WebServlet("/LoginServlet")
+//@WebServlet("/login")
+@WebServlet(value="/login", initParams = { @WebInitParam(name="pageName", value="Login Page")})
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
